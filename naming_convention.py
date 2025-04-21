@@ -106,4 +106,4 @@ Input: "{user_query}"
         # Append new data to the DataFrame
         df = pd.concat([df, pd.DataFrame([new_data])], ignore_index=True)
         df.to_excel(excel_path, index=False)
-        return {"name": standardized_name, "message": "Name was not present in existing list, added to list"}
+        return {"name": standardized_name, "price": 10, "message": "Name was not present in existing list, added to list"}
