@@ -102,6 +102,8 @@ Input: "{user_query}"
         new_data = {col: None for col in df.columns}
         new_data['Original Item'] = user_query
         new_data['Standardized Name'] = standardized_name
+        new_data['Price'] = 10
+        # Generate embedding for the new data
         new_data['Embedding'] = model.encode(f"{user_query} {standardized_name}", convert_to_numpy=True).tolist()
         # Append new data to the DataFrame
         df = pd.concat([df, pd.DataFrame([new_data])], ignore_index=True)
