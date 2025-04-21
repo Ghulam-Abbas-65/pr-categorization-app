@@ -1,0 +1,118 @@
+You are an expert in facilities management with specialized knowledge of Hard FM and Soft FM categories and their specific functions.
+
+Main Category: {level1} Subcategory: {level2} Classify the following purchase requisition and item/service into **one** specific function from the list below:
+
+Functions: {level3_options}
+
+Purchase Requisition: "{purchase_req}" Item/Service: "{item_name}"
+
+**Definitions**:
+
+- If {level1} is **Hard FM**:
+
+  - If {level2} is **Mechanical**, choose from:
+    - **Pumps**: Maintenance, repair, or supply of pumps for fluid or gas movement. Keywords: pump, impeller, centrifugal pump, water pump, submersible pump, pump seal. Examples: Supplying centrifugal pumps for irrigation, repairing water pump impellers, maintaining submersible pumps for drainage.
+    - **Belts**: Maintenance or supply of belts for mechanical systems. Keywords: conveyor belt, timing belt, V-belt, fan belt. Examples: Replacing conveyor belts in factories, supplying timing belts for engines, maintaining fan belts in HVAC units.
+    - **Water Distribution Systems**: Maintenance or supply of water piping or distribution networks. Keywords: pipe, pipeline, plumbing, water main, pipe fitting. Examples: Repairing facility water pipelines, installing water distribution valves, maintaining plumbing networks.
+    - **Valves**: Maintenance or supply of valves for flow control. Keywords: valve, gate valve, ball valve, check valve, butterfly valve. Examples: Replacing pressure relief valves in boilers, supplying gate valves for pipelines, repairing butterfly valves.
+    - **Bearings**: Maintenance or supply of bearings for mechanical movement. Keywords: bearing, roller bearing, ball bearing, thrust bearing. Examples: Replacing motor roller bearings in pumps, supplying ball bearings for conveyors, lubricating thrust bearings.
+    - **Fasteners**: Supply of bolts, screws, or other fastening components. Keywords: bolt, screw, nut, fastener, anchor. Examples: Supplying high-strength bolts for machinery, providing stainless steel screws, supplying anchor bolts.
+    - **Seals and Gaskets**: Maintenance or supply of seals or gaskets for leak prevention. Keywords: seal, gasket, O-ring, flange gasket, rubber seal. Examples: Replacing pump shaft seals, supplying flange gaskets for pipelines, maintaining O-rings in valves.
+    - **Hose and Fittings**: Maintenance or supply of hoses or pipe fittings. Keywords: hose, pipe fitting, coupling, elbow, hydraulic hose. Examples: Supplying flexible hoses for water distribution, replacing hydraulic pipe fittings, maintaining hose couplings.
+    - **Pulleys**: Maintenance or supply of pulleys for belt-driven systems. Keywords: pulley, belt drive, sheave, idler pulley. Examples: Replacing motor drive pulleys in HVAC, supplying belt drive sheaves for conveyors, maintaining idler pulleys.
+    - **Water Treatment Equipments**: Maintenance or supply of water purification or treatment systems. Keywords: water treatment, purifier, filter, softener, reverse osmosis. Examples: Maintaining water filtration units, supplying water softeners, repairing reverse osmosis systems.
+
+  - If {level2} is **Electrical**, choose from:
+    - **Installation & Maintenance Services**: Installation, repair, or maintenance of electrical systems or equipment, such as wiring circuits, panels, or installing devices like UPS systems, excluding core components, cabling, or testing. Keywords: wiring, circuit setup, panel repair, equipment installation, electrical servicing, fault repair, system setup, troubleshooting. Examples: Installing UPS systems in data centers, wiring new office circuits, repairing distribution panels, maintaining facility wiring, troubleshooting short circuits, upgrading electrical panels, servicing electrical control units.
+    - **Switchgears**: Maintenance, repair, or supply of switchgear for electrical control and protection, such as circuit breakers or switchboards, excluding other electrical components. Keywords: circuit breaker, switchboard, busbar, control panel, relay, fuse panel. Examples: Replacing high-voltage circuit breakers, maintaining low-voltage switchboards, supplying busbars for control panels, repairing distribution boards, calibrating overload relays, upgrading breaker switches.
+    - **Electrical Cables, Hardware & Supplies**: Supply of cables, wires, connectors, racks, or other electrical components not integral to core systems like UPS units or lighting. Includes cabling, racks, and connectors for equipment setups or standalone electrical installations. Keywords: cable, wire, conduit, connector, terminal, battery rack, cable tray, junction box, wiring harness, electrical fitting. Examples: Supplying power cables for UPS installations, providing battery racks for backup systems, supplying connectors for panel wiring, installing conduit pipes for circuit protection, provisioning cable trays for wiring, supplying wiring harnesses for equipment, providing electrical terminals for connections, installing junction boxes for wiring setups.
+    - **Lamp, Light Fittings and Accessories**: Maintenance, repair, or supply of lighting components and fixtures, such as bulbs or luminaires, excluding other electrical systems. Keywords: bulb, lamp, light fixture, LED, luminaire, light switch, fluorescent tube. Examples: Replacing LED bulbs in offices, installing ceiling light fixtures, supplying fluorescent tubes, maintaining light switches, provisioning dimmer switches.
+    - **Power Backup Systems**: Maintenance, repair, or supply of core uninterruptible power supply (UPS) units, battery packs, or backup generators, focusing on the primary power continuity components, excluding cabling, racks, installation, or testing. Keywords: UPS core, battery pack, backup generator, power module, battery cell, UPS battery, inverter module, battery bank, power backup. Examples: Supplying UPS battery packs for data centers, maintaining backup generators for hospitals, replacing UPS core units in offices, repairing battery banks, overhauling inverter modules, supplying power modules for UPS systems, maintaining UPS chassis for power continuity, replacing battery cells in backup systems.
+    - **Measuring, Observing and Testing Instruments**: Maintenance, calibration, or supply of electrical diagnostic tools or testing services, including performance testing of equipment like UPS systems. Keywords: voltmeter, multimeter, clamp meter, diagnostic tool, test equipment, performance test, insulation tester, power analyzer, testing service. Examples: Conducting performance tests on UPS systems, calibrating digital voltmeters, supplying clamp meters, performing insulation tests on circuits, provisioning power analyzers, testing electrical load capacity, calibrating continuity testers.
+    - **Motors**: Maintenance, repair, or supply of electric motors for standalone or system-specific applications, excluding other electrical components. Keywords: electric motor, rotor, stator, fan motor, pump motor, servo motor. Examples: Repairing HVAC fan motors, supplying pump motors for water systems, maintaining conveyor drive motors, rewinding motor stators, calibrating servo motor controllers.
+    - **How Electrical Subcategories Differ**:
+      - **Installation & Maintenance Services**: Focuses on installing, repairing, or maintaining electrical systems or equipment (e.g., wiring circuits, installing UPS systems, repairing panels). Excludes supplying core components, cabling, or testing. Example: Installing a UPS system or wiring a new circuit, but not supplying UPS batteries or cables.
+      - **Switchgears**: Covers control and protection equipment like circuit breakers or switchboards, distinct from Motors or Power Backup Systems. Example: Supplying circuit breakers, not UPS batteries or motors.
+      - **Electrical Cables, Hardware & Supplies**: Supplies cables, connectors, racks, or other components for electrical setups, not core UPS units or installation services. Example: Supplying power cables or battery racks for a UPS setup, not the UPS battery pack itself or its installation.
+      - **Lamp, Light Fittings and Accessories**: Handles lighting components like bulbs or fixtures, not wiring or diagnostic tools. Example: Replacing LED bulbs, not supplying power cables or testing equipment.
+      - **Power Backup Systems**: Focuses on core UPS units, battery packs, or generators, not cabling, racks, or installation. Example: Supplying UPS battery packs or maintaining generators, not supplying cables or installing the system.
+      - **Measuring, Observing and Testing Instruments**: Covers diagnostic tools and testing services, like UPS performance tests, not general maintenance or core components. Example: Testing UPS performance, not installing the UPS or supplying its batteries.
+      - **Motors**: Focuses on electric motors, not control equipment or backup systems. Example: Repairing fan motors, not supplying circuit breakers or UPS units.
+
+  - If {level2} is **Electro Mechanical**, choose from:
+    - **Elevators & Escalators & Travelator systems**: Maintenance, repair, or installation of vertical or horizontal transport systems. Keywords: elevator, escalator, travelator, lift, lift motor, escalator step. Examples: Repairing elevator control panels, maintaining escalator drive systems, installing travelator systems.
+    - **HVAC Systems**: Maintenance, repair, or installation of heating, ventilation, or air conditioning systems. Keywords: HVAC, chiller, air conditioner, cooling tower, compressor, heat exchanger. Examples: Maintaining cooling tower units, repairing air conditioning compressors, installing heating systems.
+    - **Automatic Doors & Shutters**: Maintenance, repair, or installation of automated entry or closure systems. Keywords: automatic door, shutter, sliding gate, roller door, door sensor. Examples: Repairing automatic sliding doors, maintaining roller shutters, installing automated gate systems.
+    - **Car Parking System & Supplies**: Maintenance, repair, or supply of parking management systems or equipment. Keywords: parking system, barrier, ticket machine, parking sensor, parking meter. Examples: Maintaining parking gate barriers, supplying ticket dispensing machines, repairing parking access sensors.
+    - **BMS** (Building Management Systems): Maintenance, repair, installation, or AMCs for integrated building control systems, including CCTV, access controls, fire alarms, and environmental monitoring. Keywords: building automation, CCTV, access control, fire alarm, AMC, security system. Examples: Servicing CCTV systems under an AMC, maintaining door access controls, upgrading building automation software.
+
+  - If {level2} is **Construction & Renovation**, choose from:
+    - **Fit Out / Joinery**: Interior fit-out, woodworking, or aesthetic upgrades. Keywords: fit-out, joinery, carpentry, partition, cabinetry, woodwork, paneling. Examples: Installing office partitionanque panels, crafting wooden cabinets, fitting out conference room interiors.
+    - **Outdoor**: Exterior non-structural construction or renovation, like paving or cladding. Keywords: outdoor, paving, cladding, facade renovation, sidewalk, patio. Examples: Replacing exterior paving tiles, installing facade cladding, constructing outdoor seating areas.
+
+  - If {level2} is **Integrated FM**, **Civil Works**, or **FLS**, no specific functions are available. Return "None".
+
+- If {level1} is **Soft FM**:
+
+  - If {level2} is **Cleaning**, choose from:
+    - **Tank Cleaning**: Cleaning or sanitization of storage tanks or reservoirs. Keywords: tank, reservoir, water tank, sanitization, tank disinfection, sludge removal. Examples: Sanitizing potable water tanks, cleaning fuel storage tanks, disinfecting chemical tanks.
+    - **Indoor Cleaning**: Cleaning or sanitization of interior spaces like offices or hallways. Keywords: indoor, office, sanitization, dusting, vacuuming, carpet cleaning. Examples: Sanitizing office interiors, cleaning facility hallways, vacuuming carpets in meeting rooms.
+    - **Outdoor Cleaning**: Cleaning or washing of exterior areas like pathways or parking lots. Keywords: outdoor, pavement, pressure washing, walkway cleaning, parking lot cleaning. Examples: Pressure washing outdoor walkways, cleaning parking lot surfaces, washing courtyard areas.
+    - **General Cleaning**: Broad cleaning tasks not specific to indoor, outdoor, or specialized areas. Keywords: general cleaning, sanitation, routine cleaning, facility cleaning, multi-surface cleaning. Examples: Performing routine cleaning across facility areas, sanitizing common spaces, maintaining general upkeep.
+    - **Facade Cleaning**: Cleaning or washing of building exteriors or windows. Keywords: facade, window cleaning, high-rise cleaning, glass cleaning, facade washing. Examples: Cleaning high-rise building windows, washing building facades, maintaining exterior glass surfaces.
+    - **Sewerage Cleaning**: Cleaning or clearing of sewer or drainage systems. Keywords: sewer, drain, wastewater, pipe clearing, drain jetting, sewer inspection. Examples: Clearing drainage pipes, cleaning sewer lines, jetting drains to remove clogs.
+
+  - If {level2} is **Landscape**, choose from:
+    - **Indoor**: Design, installation, or maintenance of indoor plant or garden features. Keywords: indoor plants, greenery, indoor garden, plant display, plant wall. Examples: Installing plant displays in lobbies, maintaining office greenery, designing indoor garden corners.
+    - **Outdoor**: Design, installation, or maintenance of outdoor garden or lawn features. Keywords: outdoor garden, planting, lawn design, shrub maintenance, tree planting. Examples: Designing outdoor garden layouts, planting ornamental shrubs, maintaining facility lawns.
+    - **Tree Rental**: Temporary provision or rental of trees for events or aesthetics. Keywords: tree rental, temporary trees, event trees, decorative trees, potted trees. Examples: Renting decorative trees for events, providing temporary potted trees, supplying seasonal trees.
+    - **Flower Arrangement**: Creation, installation, or maintenance of floral displays. Keywords: flower arrangement, bouquet, floral display, decorative flowers, floral decor. Examples: Creating floral arrangements for lobbies, maintaining decorative bouquets, installing event floral displays.
+
+  - If {level2} is **Manpower**, choose from:
+    - **Housekeeping**: Provision of cleaning staff for facility upkeep. Keywords: housekeeping staff, janitorial staff, cleaning crew, sanitation team, facility cleaners. Examples: Hiring housekeeping personnel for offices, providing janitorial staff, deploying cleaning crews.
+    - **Driver**: Provision of driving personnel for transport operations. Keywords: driver, chauffeur, transport staff, shuttle driver, delivery driver. Examples: Hiring drivers for shuttles, providing chauffeurs, deploying transport operators.
+    - **Stewarding**: Provision of staff for event support or guest assistance. Keywords: steward, event staff, usher, guest support, event coordinator. Examples: Deploying stewarding staff for events, providing ushers, hiring guest support personnel.
+    - **Movers**: Provision of staff for relocation or logistics tasks. Keywords: mover, relocation, porter, logistics staff, furniture mover. Examples: Hiring movers for office relocations, providing porters, deploying logistics staff.
+
+  - If {level2} is **Pest Control**, **Security Services**, **Waste Management**, **Groundskeeping**, or **Housekeeping**, no specific functions are available. Return "None".
+
+**Instructions**:
+
+- Select **only one** specific function from the provided list of functions ({level3_options}) based on the definitions above.
+- If the list of functions is empty (e.g., for Housekeeping, Waste Management, Groundskeeping, Pest Control, Security Services, Integrated FM, Civil Works, or FLS), return "None".
+- Analyze the purchase requisition and item/service as a unified whole to capture their combined intent and context, prioritizing the overall purpose of the task over generic keywords. For example:
+  - Under {level2} Electrical, a PR like "Supply of Backup Power Components" with an item like "UPS battery pack supply" should map to Power Backup Systems, as it focuses on core components.
+  - Under {level2} Electrical, a PR like "UPS System Setup" with an item like "power cables for equipment" should map to Electrical Cables, Hardware & Supplies, as it focuses on cabling.
+  - Under {level2} Electrical, a PR like "Supply and Installation of UPS Batteries" with an item like "UPS Battery Rack and Cabling" should map to Electrical Cables, Hardware & Supplies, as it focuses on racks and cabling, not core UPS batteries.
+  - Under {level2} Housekeeping, a PR like "Cleaner Services" with an item like "trash collection" should return "None" as Housekeeping has no Level 3 functions.
+- Evaluate the entire PR description and item/service together, ensuring alignment with the given {level1} and {level2} context to avoid misclassification (e.g., do not classify an Electrical cabling task as Power Backup Systems, or a Housekeeping task as Cleaning).
+- Follow these decision criteria to resolve ambiguity, especially for {level2} Electrical:
+  1. **Primary Task Focus**: Determine the main purpose by evaluating the PR and item/service together within the {level1} and {level2} context. For example:
+     - For {level2} Electrical, choose Power Backup Systems for supplying or maintaining core UPS units, battery packs, or generators; Electrical Cables, Hardware & Supplies for supplying cables, connectors, or racks; Installation & Maintenance Services for installing or repairing systems; Measuring, Observing and Testing Instruments for testing or diagnostics.
+     - For {level2} Electro Mechanical, choose BMS for integrated control systems like CCTV, HVAC Systems for cooling/heating, or Elevators for lift repairs.
+     - For {level2} Cleaning, choose Indoor Cleaning for office sanitization, Outdoor Cleaning for pathway washing, or Sewerage Cleaning for drain clearing.
+  2. **Core System vs. Component**: Differentiate tasks involving core systems from supporting components. For example:
+     - For {level2} Electrical, choose Power Backup Systems for core UPS units, battery packs, or generators (e.g., "supplying UPS battery packs"); Electrical Cables, Hardware & Supplies for cables, connectors, or racks (e.g., "supplying power cables or battery racks"); or Switchgears for control panels.
+     - For {level2} Mechanical, choose Pumps for pump units or Valves for valve components.
+     - For {level2} Electro Mechanical, choose BMS for integrated control systems or HVAC Systems for cooling units.
+  3. **Service vs. Supply**: Distinguish tasks based on whether they involve providing a service or supplying a component. For example:
+     - For {level2} Electrical, choose Installation & Maintenance Services for installation, repair, or maintenance (e.g., "installing UPS systems"); Power Backup Systems for supplying core components (e.g., "supplying UPS battery packs"); or Electrical Cables, Hardware & Supplies for supplying components (e.g., "supplying power cables or battery racks").
+     - For {level2} Manpower, choose Housekeeping for cleaning services or Movers for relocation services.
+  4. **Testing vs. Installation**: Differentiate diagnostic or testing tasks from installation or maintenance. For example:
+     - For {level2} Electrical, choose Measuring, Observing and Testing Instruments for testing or diagnostics (e.g., "performance testing of UPS systems"); Installation & Maintenance Services for installation or maintenance (e.g., "installing UPS systems").
+     - For {level2} Mechanical, choose Pumps for pump maintenance or Measuring, Observing and Testing Instruments if diagnostics are involved.
+  5. **Keyword Exclusivity for Electrical**: Assign items based on specific, exclusive keywords to avoid overlap, using the "How Electrical Subcategories Differ" guide to ensure accurate mapping:
+     - Choose Installation & Maintenance Services for keywords like "wiring," "circuit setup," "equipment installation," "panel repair" (e.g., "installing UPS systems").
+     - Choose Switchgears for keywords like "circuit breaker," "switchboard," "busbar," "relay" (e.g., "replacing circuit breakers").
+     - Choose Electrical Cables, Hardware & Supplies for keywords like "cable," "wire," "conduit," "battery rack," "connector," "cable tray," "junction box" (e.g., "supplying power cables or battery racks").
+     - Choose Lamp, Light Fittings and Accessories for keywords like "bulb," "lamp," "light fixture," "LED" (e.g., "replacing LED bulbs").
+     - Choose Power Backup Systems for keywords like "UPS core," "battery pack," "backup generator," "power module," "battery cell," "inverter module" (e.g., "supplying UPS battery packs").
+     - Choose Measuring, Observing and Testing Instruments for keywords like "voltmeter," "multimeter," "performance test," "testing service" (e.g., "performance testing of UPS systems").
+     - Choose Motors for keywords like "electric motor," "rotor," "fan motor," "pump motor" (e.g., "repairing HVAC fan motors").
+  6. **Electrical vs. Electro Mechanical Differentiation**: For {level2} Electrical, select functions for standalone electrical components or services (e.g., Power Backup Systems for UPS battery packs, Motors for motors). For {level2} Electro Mechanical, select BMS for integrated control systems (e.g., CCTV, access controls) or systems combining electrical and mechanical components (e.g., HVAC Systems, Elevators).
+  7. **Location Specificity**: For {level2} Cleaning or Landscape, prioritize location-based functions (e.g., Indoor Cleaning vs. Outdoor Cleaning, Indoor vs. Outdoor for Landscape).
+  8. **Specialization**: For {level2} Cleaning, choose specialized functions like Tank Cleaning or Sewerage Cleaning for specific systems; otherwise, choose General Cleaning for broad tasks. For {level2} Electrical, choose specialized functions like Power Backup Systems for core UPS components or Measuring, Observing and Testing Instruments for testing over Installation & Maintenance Services for generic tasks.
+  9. **Personnel Role**: For {level2} Manpower, choose the function matching the personnel type (e.g., Driver for driving staff, Housekeeping for cleaning staff).
+  10. **Empty List Handling**: If {level3_options} is empty (e.g., for Housekeeping, Waste Management, Groundskeeping, Pest Control, Security Services, Integrated FM, Civil Works, or FLS), return "None" without inferring a function.
+- Do not generate or infer any new function not listed in {level3_options}.
+- Respond with the specific function name only (e.g., "Power Backup Systems", "BMS") or "None" if no functions are available.

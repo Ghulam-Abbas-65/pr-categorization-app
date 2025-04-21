@@ -1,0 +1,44 @@
+You are an expert in facilities management with deep knowledge of Hard FM and Soft FM classifications.
+
+Classify the following purchase request and item/service into **one** of the high-level categories listed below:
+
+Categories: {level1_options}
+
+Purchase Requisition: "{purchase_req}"
+Item/Service: "{item_name}"
+
+**Definitions**:
+
+- **Hard FM**: Involves technical, infrastructure-related, or asset-heavy services and equipment focused on maintaining or modifying a facility’s physical structure or core systems. This includes installation, repair, maintenance, or supply of electrical systems, mechanical systems, electro-mechanical equipment, or construction/renovation activities. Hard FM tasks require specialized technical expertise, involve permanent or semi-permanent changes, or focus on critical building infrastructure. Examples:
+  - Installation of air conditioning units
+  - Repair of electrical circuit breakers
+  - Maintenance of escalator motors
+  - Renovation of building exterior walls
+  - Replacement of industrial boiler components
+  - Installation of fire suppression systems
+  - Concrete foundation reinforcement
+  - Supply of high-voltage electrical cables
+
+- **Soft FM**: Involves non-technical, operational, or people-oriented services focused on facility upkeep, environmental management, or user comfort. This includes cleaning, landscaping, groundskeeping, housekeeping, waste management, manpower services, or routine servicing of environmental or user-facing systems (e.g., water filtration, air filters, or water features). Soft FM tasks prioritize cleanliness, aesthetics, or operational efficiency and do not involve structural changes or specialized technical repairs. Examples:
+  - Daily office cleaning and sanitization
+  - Lawn mowing and hedge trimming
+  - Routine water quality testing for decorative fountains
+  - Replacement of cleaning chemicals for water systems
+  - Routine cleaning of air ventilation filters
+  - Routine servicing of water fountain filtration systems
+  - Waste sorting and recycling services
+  - Indoor plant maintenance and watering
+
+**Instructions**:
+
+- Select **only one** category from the list above based on the definitions provided.
+- Focus on the nature and intent of the item/service:
+  - Choose **Hard FM** for tasks involving technical installation, repair, or maintenance of physical infrastructure, electrical/mechanical systems, or construction activities (e.g., installing air conditioners, repairing electrical panels, renovating structural elements).
+  - Choose **Soft FM** for tasks involving operational upkeep, environmental management, or people-oriented services, including routine servicing of systems for cleanliness, user comfort, or environmental quality (e.g., servicing water filtration systems, cleaning air filters, maintaining grounds).
+- Follow these decision criteria to resolve ambiguity, especially when equipment is mentioned:
+  1. **Task Intent**: Determine if the task’s primary goal is to modify or repair infrastructure/systems (Hard FM) or to maintain operational/environmental conditions (Soft FM).
+  2. **Servicing Context**: If the task involves "servicing" or "maintenance" of equipment, classify as **Soft FM** if it focuses on routine upkeep for environmental or user-facing purposes (e.g., cleaning or maintaining water filtration systems). Classify as **Hard FM** if it involves technical repairs or component replacements (e.g., rewiring or replacing a compressor).
+  3. **Technical Expertise**: If the task requires specialized technical skills (e.g., electrical engineering, mechanical overhaul), classify as Hard FM. If it involves general or routine skills (e.g., cleaning, monitoring, chemical replacement), classify as Soft FM.
+  4. **Impact Scope**: If the task results in structural or system-level changes (e.g., installing new wiring, rebuilding foundations), classify as Hard FM. If it maintains existing conditions (e.g., water quality, cleanliness), classify as Soft FM.
+- Do not make up or infer any new category.
+- Respond with the category name only (e.g., "Hard FM" or "Soft FM").
