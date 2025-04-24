@@ -37,8 +37,8 @@ def find_or_generate_standardized_name(user_query, llm, df):
     print(f"Best match score: {best_score:.3f}")
 
     # If above threshold, return existing
-    if best_score >= 0.85:
-        return {"name": str(df.iloc[best_idx]['Standardized Name']), "price": df.iloc[best_idx]['Price'], "message": "Found Match in List"}
+    if best_score >= 0.60:
+        return {"name": str(df.iloc[best_idx]['Standardized Name']), "price": df.iloc[best_idx]['Price'], "message": "Found Match in List", "df": df}
 
     prompt = f"""
 You are a naming standardizer.
@@ -68,11 +68,11 @@ Output: {{ "name": "General_UPS_Backup_Battery" }}
 
 Examples:
 "UPS Backup Battery Units with Installation Services" → "General_UPS_Backup_Battery"
-"UPS Battery Rack and Cabling" → "UPSBatteryRack_Cabling_Setup"
+"UPS Battery Rack and Cabling" → "UPS_Battery_Rack_Cabling_Setup"
 "Installation & Testing of UPS Batteries" → "General_Installation_&_Testing"
 "Removal of Existing Parquet Flooring" → "Flooring_Parquet_Removal"
 "Supply of New Wooden Parquet Panels" → "Flooring_Parquet_WoodenPanels"
-"Installation and Finishing of Parquet Flooring" → "Flooring_Parquet_InstallationFinishing"
+"Installation and Finishing of Parquet Flooring" → "Flooring_Parquet_Installation_Finishing"
 "Preventive Maintenance for CCTV Systems" → "CCTV_Maintenance_Preventive"
 "Door Access Control System AMC" → "AccessControl_AMC_Annual"
 "Replacement of Faulty Cameras or Sensors" → "General_Replacement_Of_Faulty"
@@ -96,7 +96,7 @@ Input: "{user_query}"
     standardized_name = json.loads(response)["name"]
 
     if standardized_name in df['Standardized Name'].values:
-        return {"name": standardized_name, "price": df.iloc[best_idx]['Price'], "message": "Found Match in List"}
+        return {"name": standardized_name, "price": df.iloc[best_idx]['Price'], "message": "Found Match in List", "df": df}
 
     else:
         new_data = {col: None for col in df.columns}
@@ -107,5 +107,4 @@ Input: "{user_query}"
         new_data['Embedding'] = model.encode(f"{user_query} {standardized_name}", convert_to_numpy=True).tolist()
         # Append new data to the DataFrame
         df = pd.concat([df, pd.DataFrame([new_data])], ignore_index=True)
-        df.to_excel(excel_path, index=False)
-        return {"name": standardized_name, "price": 10, "message": "Name was not present in existing list, added to list"}
+        return {"name": standardized_name, "price": 10, "message": "Name was not present in existing list, added to list", "df": df}
