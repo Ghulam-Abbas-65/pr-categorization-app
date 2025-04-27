@@ -207,50 +207,56 @@ if uploaded_file:
     st.text_area("Raw Extracted Text", pr_text, height=300)
     st.markdown("---")  # Horizontal line for separation
     if st.button("Generate BOQ"):
-        # Call LLM to extract structured items
-        try:
-            llm_response = extraction_chain.run(pr_text)
-            response = re.sub(r"^```(?:json)?|```$", "", llm_response.strip(), flags=re.IGNORECASE).strip()
-            data = json.loads(response)
-            df = pd.DataFrame(data)
+        with st.spinner("Generating BOQ... Please wait ⏳"):
+            # Call LLM to extract structured items
+            try:
+                llm_response = extraction_chain.run(pr_text)
+                response = re.sub(r"^```(?:json)?|```$", "", llm_response.strip(), flags=re.IGNORECASE).strip()
+                data = json.loads(response)
+                df = pd.DataFrame(data)
 
-            #extracted_items = pd.DataFrame(eval(llm_response))  # Ensure response is JSON-compatible
-        except Exception as e:
-            st.error(f"Error extracting data from LLaMA: {e}")
-            st.stop()
-        master_list = fetch_full_list()
-        # --- Process Data ---
-        standardized_data = []
-        length_ms = len(master_list)
-        for _, row in df.iterrows():
-            item_name = row["description"]
-            quantity = int(row.get("quantity", 1))
+                #extracted_items = pd.DataFrame(eval(llm_response))  # Ensure response is JSON-compatible
+            except Exception as e:
+                st.error(f"Error extracting data from LLaMA: {e}")
+                st.stop()
+            master_list = fetch_full_list()
+            # --- Process Data ---
+            standardized_data = []
+            length_ms = len(master_list)
+            for _, row in df.iterrows():
+                pr_name = row["item_name"]
+                item_name = row["description"]
+                quantity = int(row.get("quantity", 1))
 
-           
-            result = find_or_generate_standardized_name(item_name, llm_standardize, master_list)
-            standardized_name = result["name"]
-            price = result["price"]
-            total_price = price * quantity
-            master_list = result["df"]
             
-
-            standardized_data.append({
-                "PR Name": row["item_name"], # Original PR Name
-                "Item Name": item_name,
-                "Standardized Name": standardized_name,
-                "Quantity": quantity,
-                "Price": price,
-                "Total Price": total_price
-            })
-        # Step 1: Slice only the new rows
-        new_rows_df = master_list.iloc[length_ms:]
-        # Step 2: Push only new rows to SharePoint
-        save_to_masterlist(new_rows_df)
-        standardized_df = pd.DataFrame(standardized_data)
+                result = find_or_generate_standardized_name(item_name, llm_standardize, master_list)
+                standardized_name = result["name"]
+                price = result["price"]
+                total_price = price * quantity
+                master_list = result["df"]
+                categories = classify_purchase_req(pr_name, item_name)
+                l1, l2, l3 = categories["level_1_category"], categories["level_2_category"], categories["level_3_category"]            
+                
+                standardized_data.append({
+                    "PR Name": row["item_name"], # Original PR Name
+                    "Item Name": item_name,
+                    "Standardized Name": standardized_name,
+                    "Level 1 Category": l1,
+                    "Level 2 Category": l2,
+                    "Level 3 Category": l3,
+                    "Quantity": quantity,
+                    "Price": price,
+                    "Total Price": total_price
+                })
+            # Step 1: Slice only the new rows
+            new_rows_df = master_list.iloc[length_ms:]
+            # Step 2: Push only new rows to SharePoint
+            save_to_masterlist(new_rows_df)
+            standardized_df = pd.DataFrame(standardized_data)
+            # Save to BytesIO for Streamlit download
+            save_to_new_list_boq(standardized_df)
         st.subheader("📊 Processed PR")
         st.dataframe(standardized_df)
-        # Save to BytesIO for Streamlit download
-        save_to_new_list_boq(standardized_df)
         st.success("BOQ Generated Successfully!")
 
 
