@@ -4,6 +4,7 @@ from langchain_groq import ChatGroq
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 from naming_convention import find_or_generate_standardized_name
+from langchain.chat_models import AzureChatOpenAI
 import pandas as pd
 import json
 from io import BytesIO
@@ -14,10 +15,23 @@ import re
 from sharepoint import fetch_full_list, save_to_masterlist, save_to_new_list_boq
 import requests
 
-groq_api_key = st.secrets["GROQ_API_KEY"]
-# Initialize LLaMA 3.3 on Groq
-llm_standardize = ChatGroq(temperature=0, model_name="llama3-8b-8192", groq_api_key=groq_api_key,)
-llm = ChatGroq(temperature=0, model_name="llama-3.3-70b-versatile", groq_api_key=groq_api_key,)
+
+azure_api_key = st.secrets["AZURE_OPENAI_API_KEY"]
+azure_endpoint = st.secrets["AZURE_OPENAI_ENDPOINT"]
+azure_deployment_name = st.secrets["AZURE_OPENAI_DEPLOYMENT_NAME"]
+apiVersion = st.secrets["AZURE_OPENAI_API_VERSION"]
+
+llm = AzureChatOpenAI(
+    openai_api_key=azure_api_key,
+    azure_endpoint=azure_endpoint,
+    deployment_name=azure_deployment_name,
+    openai_api_version=apiVersion,
+    temperature=0,
+)
+# groq_api_key = st.secrets["GROQ_API_KEY"]
+# # Initialize LLaMA 3.3 on Groq
+# llm_standardize = ChatGroq(temperature=0, model_name="llama3-8b-8192", groq_api_key=groq_api_key,)
+# llm = ChatGroq(temperature=0, model_name="llama-3.3-70b-versatile", groq_api_key=groq_api_key,)
 
 # -------------------------------
 # Load Master Item File
@@ -229,7 +243,7 @@ if uploaded_file:
                 quantity = int(row.get("quantity", 1))
 
             
-                result = find_or_generate_standardized_name(item_name, llm_standardize, master_list)
+                result = find_or_generate_standardized_name(item_name, llm, master_list)
                 standardized_name = result["name"]
                 price = result["price"]
                 total_price = price * quantity
